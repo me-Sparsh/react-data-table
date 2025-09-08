@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 
-// --- Static JSON Data (100 unique entries) ---
 const employeeData = [
     { id: 1, name: 'Aarav Sharma', email: 'aarav.sharma@example.com', date: '2023-01-15', status: 'Active', amount: 50000, department: 'Engineering', location: 'Mumbai', manager: 'Rohan Malhotra', age: 28 },
     { id: 2, name: 'Vivaan Singh', email: 'vivaan.singh@example.com', date: '2022-11-20', status: 'Inactive', amount: 45000, department: 'Marketing', location: 'Delhi', manager: 'Priya Mehta', age: 35 },
@@ -104,7 +103,6 @@ const employeeData = [
     { id: 100, name: 'Qirat Naidu', email: 'qirat.naidu@example.com', date: '2023-04-22', status: 'Active', amount: 83000, department: 'Sales', location: 'Chennai', manager: 'Kabir Kapoor', age: 35 },
 ];
 
-// --- Column Configuration ---
 const allTableColumns = [
     { key: 'name', label: 'Employee' }, { key: 'id', label: 'ID' }, { key: 'department', label: 'Department' },
     { key: 'status', label: 'Status' }, { key: 'age', label: 'Age' }, { key: 'date', label: 'Joining Date' },
@@ -112,7 +110,6 @@ const allTableColumns = [
     { key: 'manager', label: 'Manager' },
 ];
 
-// --- Helper Components & Functions ---
 const avatarColorClasses = [
     'bg-red-100 text-red-600 dark:bg-red-500/20 dark:text-red-300', 'bg-orange-100 text-orange-600 dark:bg-orange-500/20 dark:text-orange-300',
     'bg-amber-100 text-amber-600 dark:bg-amber-500/20 dark:text-amber-300', 'bg-yellow-100 text-yellow-600 dark:bg-yellow-500/20 dark:text-yellow-300',
@@ -146,7 +143,6 @@ const StatusBadge = ({ status }) => {
     return <span className={`px-3 py-1 text-xs font-semibold rounded-full ring-1 ring-inset inline-block ${classes[status]}`}>{status}</span>;
 };
 
-// --- Main App Component ---
 export default function App() {
     const [filter, setFilter] = useState('');
     const [sortConfig, setSortConfig] = useState([{ key: 'name', direction: 'ascending' }]);
